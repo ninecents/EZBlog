@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>EZBlog</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+    <br>
+    <br>
+
+    <div class='config'>
+      <!-- 配置 -->
+      <span class='config'>MD保存路径</span><input id='my_blog_save_path' value='D:\_ALL\LIFE\blog_save_path\'></input> <button id='my_btn_save_md'>保存网址</button>
+      <br>
+      <span class='config'>浏览器地址</span><input id='my_url' value="https://blog.csdn.net/kinghzking"></input> <button id='my_btn_load_url'>打开网址</button>
+    </div>
+
+    <webview id='my_blog_view' src='https://blog.csdn.net/kinghzking/article/details/104525129' nodeintegration>      <!--  src='https://mdnice.com/' -->
+        
+    </webview>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

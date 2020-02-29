@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Main Process",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "C:/Users/Administrator/AppData/Roaming/npm/electron",
+        "windows": {
+          "runtimeExecutable": "C:/Users/Administrator/AppData/Roaming/npm/electron.cmd"
+        },
+        "args" : ["."]
+      }
+    ]
+}

@@ -1,0 +1,27 @@
+body{
+    background-color: grey;
+}
+
+webview {
+    width: 100%;
+    height: 800px;   /* 800px; */
+    display: block;
+    display:inline-flex;
+    border: red
+    /* auto */
+}
+
+input {
+    width: 600px
+}
+
+div {
+    display:block; 
+    width:auto; 
+    border:3px solid greenyellow;
+}
+
+span .config{
+    width: 200px;
+    display: block;
+}
