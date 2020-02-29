@@ -1,0 +1,2 @@
+# EZBlog
+make blog easy.
