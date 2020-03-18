@@ -10,6 +10,9 @@
         "windows": {
           "runtimeExecutable": "C:/Users/Administrator/AppData/Roaming/npm/electron.cmd"
         },
+        "osx": {
+          "runtimeExecutable": "/usr/local/homebrew/bin/electron"
+        },
         "args" : ["."]
       }
     ]

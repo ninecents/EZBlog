@@ -27,11 +27,25 @@ function createWindow() {
       height: _height,
       // title: 'OneWrite操作台',
       webPreferences: {
+        // webSecurity: false,
         nodeIntegration: true,
+        nodeintegrationinsubframes: true,
         webviewTag: true,
         preload: path.join(__dirname, 'preload.js')
       }
     })
+    
+    // 禁用X-Frame-Options
+    if(false)
+    {
+      var onHeadersReceived=(d, c)=>{
+        if(d.responseHeaders['X-Frame-Options']){
+            delete d.responseHeaders['X-Frame-Options'];
+        }
+        c({cancel: false, responseHeaders: d.responseHeaders});
+      }    
+      mainWindow.webContents.session.webRequest.onHeadersReceived({}, onHeadersReceived);      
+    }
 
     // 加载本地页面
     mainWindow.loadFile('index.html')
@@ -61,3 +75,19 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// const {session} = require('electron')
+// const {ipcMain} = require('electron')
+
+// ipcMain.on('disable-x-frame', (event, arg) => {
+	
+//   session.fromPartition(arg.partition).webRequest.onHeadersReceived({}, (d, c) => {
+							
+// 	if(d.responseHeaders['x-frame-options'] || d.responseHeaders['X-Frame-Options']){
+// 		delete d.responseHeaders['x-frame-options'];
+// 		delete d.responseHeaders['X-Frame-Options'];
+// 	}
+// 	c({cancel: false, responseHeaders: d.responseHeaders, statusLine: d.statusLine});
+//   });
+
+// });

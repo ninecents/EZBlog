@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- <p style='display: none;'>{{ message }}</p>
+        <button style='display: none;' v-for='item in functions'>{{item.name}}</button> -->
+        <ul>
+            <li v-for='item in functions'><a v-bind:href="item.url" target="workspace">{{item.name}}</a></li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                functions:[{
+                    name: 'gitee克隆',
+                    url: './gitee/import_url.html'
+                },{
+                    name: 'qq群列表',
+                    url: './qq/qun_mgr.html'
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>
